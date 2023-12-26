@@ -3,18 +3,18 @@ import Item from "./Item";
 
 function ShoppingList({ items }) {
 
-
-const [FilterCategory, setFilterCategory] = useState("All");
+//const [FilterCategory, setFilterCategory] = useState("All");
 const [ItemsFiltered,setItemsFiltered] = useState(items)
 
 function changeFilter(event) {
     const filterValue=(event.target.value);
-    setFilterCategory(filterValue);
+    //setFilterCategory(filterValue);
     if (filterValue==="All"){
       setItemsFiltered(items)
     } else{
-      setItemsFiltered((items.filter((item)=>item.category===FilterCategory)));
+      setItemsFiltered(items.filter((item)=>item.category===filterValue));
     }
+    console.log(ItemsFiltered);
 }
 
   return (
